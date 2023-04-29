@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-29T22:52:02+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yi Heng’s Blog</title><subtitle>My Blog</subtitle><author><name>Yi Heng Tan</name></author><entry><title type="html">Post: TCP vs UDP</title><link href="http://localhost:4000/posts/2023-04-29-my-new-post/" rel="alternate" type="text/html" title="Post: TCP vs UDP" /><published>2023-04-29T00:00:00+08:00</published><updated>2023-04-29T00:00:00+08:00</updated><id>http://localhost:4000/posts/my-new-post</id><content type="html" xml:base="http://localhost:4000/posts/2023-04-29-my-new-post/">&lt;p&gt;TCP vs UDP is of one the most common question to be asked in a SWE interview. In this post I will cover TCP and UDP
+in details and compare their differences.&lt;/p&gt;
+
+&lt;h2 id=&quot;lower-layers&quot;&gt;Lower Layers&lt;/h2&gt;
+
+&lt;p&gt;(klement: This &lt;a href=&quot;https://serverfault.com/questions/246508/how-is-the-mtu-is-65535-in-udp-but-ethernet-does-not-allow-frame-size-more-than&quot;&gt;Stack Exchange Thread&lt;/a&gt; was very useful in helping my understanding.)&lt;/p&gt;
+
+&lt;p&gt;To understand the differences between the UDP and TCP, we have to first understand the lower layers they depend on.&lt;/p&gt;
+
+&lt;p&gt;Data Link Layer (ethernet):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Overview: helps with the transferring of data between two nodes.&lt;/li&gt;
+  &lt;li&gt;Function:
+    &lt;ul&gt;
+      &lt;li&gt;Transfers the &lt;strong&gt;data frames&lt;/strong&gt; between two nodes connected by a physical link&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ethernet protocol:
+    &lt;ul&gt;
+      &lt;li&gt;Has a maximum frame size of &lt;strong&gt;1518 bytes&lt;/strong&gt; unless &lt;strong&gt;jumbo frames&lt;/strong&gt; are supported&lt;/li&gt;
+      &lt;li&gt;Usually the &lt;strong&gt;Maximum Transmission Unit&lt;/strong&gt;(MTU) is set to the ethernet maximum frame size&lt;/li&gt;
+      &lt;li&gt;The protocol &lt;strong&gt;will not&lt;/strong&gt; accept data frame larger than maximum frame size&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jumbo Frames:
+    &lt;ul&gt;
+      &lt;li&gt;Special configuration to allow larger than &lt;strong&gt;1518 bytes&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;To successfully transfer larger than &lt;strong&gt;1518 bytes&lt;/strong&gt;, all nodes in the network need to
+support jumbo frames.&lt;/li&gt;
+      &lt;li&gt;If any one of the nodes does not support jumbo frame, the data frame
+will not be able a transmit through.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Network Layer (IP):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Overview: allow transfering of &lt;strong&gt;packets&lt;/strong&gt; from a source node to a destination node through X number of nodes&lt;/li&gt;
+  &lt;li&gt;Function:
+    &lt;ul&gt;
+      &lt;li&gt;Deals with routing the packet through multiple intermediate nodes.&lt;/li&gt;
+      &lt;li&gt;Fragmentation: break down large packets into multiple smaller packets that is within the MTU limit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fragmentation:
+    &lt;ul&gt;
+      &lt;li&gt;If the data needed to be transported exceed the MTU, IP protocol will break down the
+packets into smaller packets (fragements)&lt;/li&gt;
+      &lt;li&gt;Each fragement packet will set the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fragement number&lt;/code&gt; and set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;more fragement&lt;/code&gt; bit (except last fragement) in the header&lt;/li&gt;
+      &lt;li&gt;If anyone of the smaller fragment packet is lost/corrupted, the entire large packet is marked as lost.&lt;/li&gt;
+      &lt;li&gt;Downside:
+        &lt;ul&gt;
+          &lt;li&gt;More protocol overhead - instead of one IP header, will need IP header for each smaller fragment packet&lt;/li&gt;
+          &lt;li&gt;brittle - if a fragment is lost/corrupted the entire packet is lost/corrupted&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Note: IP uses both datagram and packets to refer data being sent&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;user-datagram-protocol-udp&quot;&gt;User Datagram Protocol (UDP)&lt;/h2&gt;
+
+&lt;p&gt;UDP is a lightweight transport layer protocol that optimises for speed
+and trades off reliability of data transfer. UDP optimises for speed
+by having a &lt;strong&gt;connectionless protocol&lt;/strong&gt; and &lt;strong&gt;push&lt;/strong&gt; model.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-udp-works&quot;&gt;How UDP works&lt;/h3&gt;
+
+&lt;p&gt;Unlike TCP, UDP does not have any specific flow that the receiver and sender must follow.
+When there are data to be sent, the sender the wrap the data as &lt;strong&gt;datagram&lt;/strong&gt; and send it to
+the receiver.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Header&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Adds Source port and Destination port to the header to allow the OS to know
+which process to direct the datagram to.&lt;/li&gt;
+  &lt;li&gt;Checksum:
+    &lt;ul&gt;
+      &lt;li&gt;Instead of traditional checksum, UDP uses a pseudo header method. Prepends IP layer data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fields:
+    &lt;ul&gt;
+      &lt;li&gt;Source Port: 16 bits&lt;/li&gt;
+      &lt;li&gt;Destination Port: 16 bits&lt;/li&gt;
+      &lt;li&gt;Length: 16 bits&lt;/li&gt;
+      &lt;li&gt;Checksum: 16 bits&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Max Datagram Size&lt;/strong&gt;: Industry standard uses 512 byte.&lt;/p&gt;
+
+&lt;h3 id=&quot;udp-use-cases&quot;&gt;UDP use cases&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DNS: need to optimize for time when querying the server. Small payload -&amp;gt; fit in a single datagram&lt;/li&gt;
+  &lt;li&gt;Voice Over IP: can deal with loss but not low latency&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;transport-control-protocol-tcp&quot;&gt;Transport Control Protocol (TCP)&lt;/h2&gt;
+
+&lt;p&gt;The motivation behind TCP is intended for highly reliable host-to-host protocol.
+The protocol must be able to push data, recover from lost or damaged data, receiver must be able to
+control the flow of data being sent, allow for multiple process to communicate on TCP on a single machine,
+establish a connection.&lt;/p&gt;
+
+&lt;p&gt;TCP uses the idea of &lt;strong&gt;packet&lt;/strong&gt; to represent the data of one transaction between hosts.&lt;/p&gt;
+
+&lt;h3 id=&quot;tcp-headers&quot;&gt;TCP Headers&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Source Port&lt;/li&gt;
+  &lt;li&gt;Destination Port&lt;/li&gt;
+  &lt;li&gt;Sequence Number: 32 bits
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN=1&lt;/code&gt;: the initial sequence number.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN=0&lt;/code&gt;: The sequence number of the first byte in this segment&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Acknowledgment Number: 32 bit
+    &lt;ul&gt;
+      &lt;li&gt;The next sequence number the sender (sender or receiver) of the segment is expecting to receive&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Offset: 4 bits
+    &lt;ul&gt;
+      &lt;li&gt;The number of 32 bit words in TCP header. Used to tell when the data begins&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Reserved: 6 bits&lt;/li&gt;
+  &lt;li&gt;Control Bits:
+    &lt;ul&gt;
+      &lt;li&gt;Used to state the different controls&lt;/li&gt;
+      &lt;li&gt;Notables: ACK, SYN, FIN&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Window:
+    &lt;ul&gt;
+      &lt;li&gt;The number of data octets beginning with the one indicated in the 
+acknowledgement field which the sender is willing to accept&lt;/li&gt;
+      &lt;li&gt;How many packets after the ACK it is can receive&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Checksum
+    &lt;ul&gt;
+      &lt;li&gt;Similar to UDP, the checksum includes pseudo header&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Urgent Pointer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tcp-concepts&quot;&gt;TCP Concepts&lt;/h3&gt;
+
+&lt;h4 id=&quot;sequence-number&quot;&gt;Sequence number&lt;/h4&gt;
+
+&lt;p&gt;All packets will have a sequence number. This allows the other party to send an ACK on a sequence number.
+When the receiver acknowledges &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; this means that all packets till &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x-1&lt;/code&gt; has been received.&lt;/p&gt;
+
+&lt;p&gt;The host can choose any sequence number to start with.&lt;/p&gt;
+
+&lt;h4 id=&quot;tcp-connection&quot;&gt;TCP connection&lt;/h4&gt;
+
+&lt;h5 id=&quot;opening-connection&quot;&gt;Opening connection&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;    TCP A                                                TCP B
+
+1.  CLOSED                                               LISTEN
+
+2.  SYN-SENT    --&amp;gt; &amp;lt;SEQ=100&amp;gt;&amp;lt;CTL=SYN&amp;gt;               --&amp;gt; SYN-RECEIVED
+
+3.  ESTABLISHED &amp;lt;-- &amp;lt;SEQ=300&amp;gt;&amp;lt;ACK=101&amp;gt;&amp;lt;CTL=SYN,ACK&amp;gt;  &amp;lt;-- SYN-RECEIVED
+
+4.  ESTABLISHED --&amp;gt; &amp;lt;SEQ=101&amp;gt;&amp;lt;ACK=301&amp;gt;&amp;lt;CTL=ACK&amp;gt;       --&amp;gt; ESTABLISHED
+
+5.  ESTABLISHED --&amp;gt; &amp;lt;SEQ=101&amp;gt;&amp;lt;ACK=301&amp;gt;&amp;lt;CTL=ACK&amp;gt;&amp;lt;DATA&amp;gt; --&amp;gt; ESTABLISHED
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;TCP connection is established only after three packets has been sent&lt;/li&gt;
+  &lt;li&gt;Three Way handshake
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; will establish a connection to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; and stating the initial sequence number(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100&lt;/code&gt;) that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; uses.&lt;/li&gt;
+      &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; receives the packet from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; will acknowledge it by stating.
+the next sequence number it wants to receive (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100 + 1&lt;/code&gt;) and state the 
+sequence number it will start with.&lt;/li&gt;
+      &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; receives the packet from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; will acknowledge it by stating that it want to receive the next sequence number (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;300+1&lt;/code&gt;)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Why three-way handshake&lt;/strong&gt;: To prevent old connection from causing confusion.&lt;/p&gt;
+
+&lt;h5 id=&quot;closing-connection&quot;&gt;Closing connection&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;    TCP A                                                TCP B
+
+1.  ESTABLISHED                                          ESTABLISHED
+
+2.  (Close)
+    FIN-WAIT-1  --&amp;gt; &amp;lt;SEQ=100&amp;gt;&amp;lt;ACK=300&amp;gt;&amp;lt;CTL=FIN,ACK&amp;gt;  --&amp;gt; CLOSE-WAIT
+
+3.  FIN-WAIT-2  &amp;lt;-- &amp;lt;SEQ=300&amp;gt;&amp;lt;ACK=101&amp;gt;&amp;lt;CTL=ACK&amp;gt;      &amp;lt;-- CLOSE-WAIT
+
+4.                                                       (Close)
+    TIME-WAIT   &amp;lt;-- &amp;lt;SEQ=300&amp;gt;&amp;lt;ACK=101&amp;gt;&amp;lt;CTL=FIN,ACK&amp;gt;  &amp;lt;-- LAST-ACK
+
+5.  TIME-WAIT   --&amp;gt; &amp;lt;SEQ=101&amp;gt;&amp;lt;ACK=301&amp;gt;&amp;lt;CTL=ACK&amp;gt;      --&amp;gt; CLOSED
+
+6.  (2 MSL)
+    CLOSED
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; has completed sending all data and would like to close the connection,
+it will set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIN&lt;/code&gt; bit.&lt;/li&gt;
+  &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; receive the packet, it will ACK &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;’s close connection packet but
+will still send any data left on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; side&lt;/li&gt;
+  &lt;li&gt;Once &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; has completed sending the data, it will send a close connection packet to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Once &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; receives the close packet from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; it will close and send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; a packet to ACK it&lt;/li&gt;
+  &lt;li&gt;After receiving &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;’s ACK of closing, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; will close the connection.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;data-transfer&quot;&gt;Data Transfer&lt;/h3&gt;
+
+&lt;p&gt;TCP has the following key features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ordered data transfer&lt;/strong&gt;: the destination will re-arrange the segments in order&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Retransmission of lost packets&lt;/strong&gt;: any cumulative stream not ACKed will be re-transmitted&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error-free data transfer&lt;/strong&gt;: corrupted segments are treated as lost and re-transmitted&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Flow control&lt;/strong&gt;: limits the rate a sender transfer data to guarantee reliable delivery&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Congestion control&lt;/strong&gt;: lost packet due to congestion will lead to reduction in data delivery&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;reliable-transmission&quot;&gt;Reliable Transmission&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Uses sequence number to determine the ordering of the segments&lt;/li&gt;
+  &lt;li&gt;Receiver uses &lt;strong&gt;ACK&lt;/strong&gt; to tell the sender that it is now the sender turn to send data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;dup-ack-based-retransmission&quot;&gt;Dup-ACK based retransmission&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If a segment (ie: 100) is lost, the receiver cannot send ACK higher than what it never receive (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK &amp;gt; 100&lt;/code&gt;)
+. The sender will ack the latest in order segment (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK=100&lt;/code&gt; the ack sequence number is one more than latest segment).&lt;/li&gt;
+  &lt;li&gt;Result in the receiver sending duplicate ACK (might have previously send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK=100&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;If the sender receive &lt;strong&gt;3&lt;/strong&gt; duplicate ACKs, the sender will send the same segment again
+    &lt;ul&gt;
+      &lt;li&gt;Choose 3 as some segments might arrive out of order causing unneccessary ACKs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;timeout-based-retransmission&quot;&gt;Timeout-based retransmission&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sender will make a conservative estimate of the RTT.&lt;/li&gt;
+  &lt;li&gt;If the receiver does not ACK with in the threshold time, the sender will retransmit.&lt;/li&gt;
+  &lt;li&gt;The timeout of the retransmit will be double to allow for a exponential back-off&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-detection&quot;&gt;Error detection&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Uses checksum to determine if a segment has been corrupted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;flow-control&quot;&gt;Flow control&lt;/h4&gt;
+
+&lt;p&gt;Control the flow of data to allow devices of different specs to communicate&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Act of reducing the transmission rate when the receiver has maxed out its resources&lt;/li&gt;
+  &lt;li&gt;In each TCP segment, the receiver will state the &lt;strong&gt;receive window&lt;/strong&gt;, the number of bytes it is willing to add
+to the buffer&lt;/li&gt;
+  &lt;li&gt;The sender will be able to send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt; number of segments with bytes less than the receive window without waiting
+for an ACK by the receiver&lt;/li&gt;
+  &lt;li&gt;If the receiver advertise window to be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; (buffer full):
+    &lt;ul&gt;
+      &lt;li&gt;The sender will start a persist timer&lt;/li&gt;
+      &lt;li&gt;Once persist timer times out, it sender will start by sending a small segment to unlock the dead lock&lt;/li&gt;
+      &lt;li&gt;Possible Deadlock: The sender receive that the window &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=0&lt;/code&gt; and do not send anymore segments. However, the
+receiver clear the buffer and send a segment to advertise that the window &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;0&lt;/code&gt; gets lost. Both the sender and
+receiver will be waiting on each other.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;congestion-control&quot;&gt;Congestion Control&lt;/h4&gt;
+
+&lt;p&gt;Congestion control is the act of reducing transmission rate when the network is congested.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Congestion Windows&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The maximum number of bytes that can be send through the network at anytime.&lt;/li&gt;
+  &lt;li&gt;Multiple of Maximum Segment Size (MSS)&lt;/li&gt;
+  &lt;li&gt;Totally different from the receiver sliding window&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Algorithms&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Slow start: Start with a small congestion window and keep doubling until retransmission is needed.
+Assume loss of packet is due to congestion in the network&lt;/li&gt;
+  &lt;li&gt;Congestion avoidance:
+    &lt;ul&gt;
+      &lt;li&gt;Once the congestion window slow start algorithm reach a certain size, slow start threshold(ssthresh),
+the algorithm will change to linear growth.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;handling-multiple-connections&quot;&gt;Handling Multiple connections&lt;/h4&gt;
+
+&lt;p&gt;A TCP connection session is uniquely identified by the client &lt;strong&gt;IP&lt;/strong&gt; and &lt;strong&gt;PORT&lt;/strong&gt; number. The
+OS will have a Transmission Control Block (&lt;strong&gt;TCB&lt;/strong&gt;) that maps the &lt;strong&gt;CLIENT_IP:CLIENT_PORT:SEVER_PORT&lt;/strong&gt; 
+to the process that holds owns the connection.&lt;/p&gt;
+
+&lt;h4 id=&quot;maximum-segment-size&quot;&gt;Maximum segment size&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Maximum Transmission Unit&lt;/strong&gt; (MTU):
+    &lt;ul&gt;
+      &lt;li&gt;The largest data that can be transmitted over the network layer (IP).&lt;/li&gt;
+      &lt;li&gt;Each device will know the MTU size of the interface it is connected to.&lt;/li&gt;
+      &lt;li&gt;If data &amp;gt; MTU, IP layer will split packets into smaller fragments (&lt;strong&gt;IP fragmentation&lt;/strong&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Maximum Segment Size&lt;/strong&gt; (MSS):
+    &lt;ul&gt;
+      &lt;li&gt;The maximum segment size that can be transmitted over the application layer (TCP)
+        &lt;ul&gt;
+          &lt;li&gt;Segment is the data component of a TCP packet (does not include TCP headers)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Each device will determine on its own MSS based on its own MTU.
+        &lt;ul&gt;
+          &lt;li&gt;Normally, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MSS = MTU - sizeof(IP headers)[20 bytes] - sizeof(TCP headers)[20 bytes]&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;During connection establishment phase, the devices will announce their own MSS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tcp-vs-udp&quot;&gt;TCP vs UDP&lt;/h3&gt;
+
+&lt;h4 id=&quot;sending-large-payload&quot;&gt;Sending large payload&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;UDP&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Not good at sending large payload&lt;/li&gt;
+  &lt;li&gt;Forces all data to be sent as a single datagram through IP layer&lt;/li&gt;
+  &lt;li&gt;If the payload &amp;gt; MTU, IP layer will be forced to use fragmentation to split the large data into smaller
+fragments that are within the MTU&lt;/li&gt;
+  &lt;li&gt;This will result in the packet to be &lt;strong&gt;easily lost&lt;/strong&gt; through the IP layer
+    &lt;ul&gt;
+      &lt;li&gt;Any one of the fragment lost/corrupted the entire packet is lost/corrupted&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UDP has not ACK -&amp;gt; cannot recover lost datagram&lt;/li&gt;
+  &lt;li&gt;Small datagram of size &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;512&lt;/code&gt; bytes can be reliably transferred with the guarantee that there wont be fragmentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;TCP&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Good for sending large payload&lt;/li&gt;
+  &lt;li&gt;Does not send a large packet to IP layer with fragmentation&lt;/li&gt;
+  &lt;li&gt;Split the packet into multiple smaller packets within the size of MSS (implies that the IP packet within the MTU)
+    &lt;ul&gt;
+      &lt;li&gt;Each packet send to IP layer is within MSS =&amp;gt; no fragmentation =&amp;gt; less prone to lost/corruption&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Uses ACK and sequence number to ensure that all the smaller packets are reliably sent
+    &lt;ul&gt;
+      &lt;li&gt;Receiver will receive the complete large payload.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;broadcast-and-mutli-cast&quot;&gt;Broadcast and Mutli-cast&lt;/h4&gt;
+
+&lt;p&gt;IP multicast:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;IP provides &lt;strong&gt;Internet Group Management Protocol&lt;/strong&gt; (IGMP)&lt;/li&gt;
+  &lt;li&gt;Functionality:
+    &lt;ul&gt;
+      &lt;li&gt;Source can send a single datagram to a IGMP IP address and routers will automatically duplicate it and send to members of the group.&lt;/li&gt;
+      &lt;li&gt;Nodes can send message to IGMP to be added to the group.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A set of reserved IP range 224.0.0.0 to 239.255.255.255 are reserved for IGMP&lt;/li&gt;
+  &lt;li&gt;A group of multicast destination can hide behind a single IGMP IP address - senders do not need to send the packet to each
+member&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UDP vs TCP:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;UDP can muilticast but TCP cannot.&lt;/li&gt;
+  &lt;li&gt;Impossible for TCP to use multicast cast as it requires establishing a connection (the IP address is just a proxy to multiple nodes)&lt;/li&gt;
+  &lt;li&gt;IGMP is only demultiplex the message cannot multiplex the ACKs from the members&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Yi Heng Tan</name></author><category term="Post" /><category term="Networks" /><summary type="html">A comparison of TCP and UDP</summary></entry></feed>
