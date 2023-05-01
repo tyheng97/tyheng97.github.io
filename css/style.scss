@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 article {
-  margin: 3em 0;
+  margin: 1em 0;
 }
 
 p {
@@ -116,10 +116,10 @@ button.btn, input.btn {
 .hero-container {
   margin: 1em 0 1em 0;
   @include bp-xsmall {
-    margin: 5em 0 5em 0;
+    margin: 1em 0 1em 0;
   }
   @include bp-small {
-    margin: 5em 0 5em 0;
+    margin: 1em 0 1em 0;
   }
 }
 
@@ -140,7 +140,7 @@ button.btn, input.btn {
     font-size: 48px;
   }
   p {
-    margin: 2em 0 4em 0;
+    margin: 2em 0 2em 0;
   }
   .hero-buttons {
     margin: 0 auto;

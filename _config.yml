@@ -20,7 +20,7 @@ title                    : "Yi Heng Tan"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : &name "Yi Heng Tan"
-description              : "I'm a software developer who is passionate about Quantitative Finance and Machine Learning "
+description              : "I'm a software Engineer who is passionate about Quantitative Finance and Machine Learning "
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
