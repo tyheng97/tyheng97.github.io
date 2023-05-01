@@ -1,12 +1,13 @@
 # main links
 # main links
 main:
+  - title: "Resume"
+    url: /resume/
   - title: "Posts"
     url: /posts/
-  - title: "Readings"
-    url: /readings/
   - title: "Projects"
     url: /projects/
+
 # sidebar navigation list sample
 sidebar-sample:
   - title: "Parent Page A"

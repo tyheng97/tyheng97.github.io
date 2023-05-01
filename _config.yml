@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Theme Settings
-#
+#head.html
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yi Heng's Blog"
+title                    : "Yi Heng, Tan"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : &name "Yi Heng Tan"
-description              : "My Blog"
+description              : "I'm a software developer who is passionate about Quantitative Finance and Machine Learning "
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -145,7 +145,6 @@ exclude:
   - .asset-cache
   - .bundle
   - .jekyll-assets-cache
-  - .sass-cache
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
@@ -192,13 +191,14 @@ kramdown:
   enable_coderay: false
 
 # Collections
-collections:
+collections:  
+  resume:
+    output: true
+    permalink: /:collection/:path/
   projects:
     output: true
     permalink: /:collection/:path/
-  readings:
-    output: true
-    permalink: /:collection/:path/
+
   posts:
     output: true
     permalink: /:collection/:path/
@@ -223,6 +223,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -277,28 +278,29 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
       author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-  # _readings
-  - scope:
-      path: ""
-      type: readings
-    values:
       layout: single
-      author_profile: true
       read_time: true
       comments: true
       share: true
+      related: true
   # _projects
   - scope:
       path: ""
       type: projects
     values:
-      layout: splash
+      layout: single
+      author_profile: true
       read_time: true
       comments: true
       share: true
+      related: true
+  # collections
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+

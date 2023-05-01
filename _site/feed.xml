@@ -1,403 +1,501 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-30T00:18:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yi Heng’s Blog</title><subtitle>My Blog</subtitle><author><name>Yi Heng Tan</name></author><entry><title type="html">Post: TCP vs UDP</title><link href="http://localhost:4000/posts/2023-04-29-my-new-post/" rel="alternate" type="text/html" title="Post: TCP vs UDP" /><published>2023-04-29T00:00:00+08:00</published><updated>2023-04-29T00:00:00+08:00</updated><id>http://localhost:4000/posts/my-new-post</id><content type="html" xml:base="http://localhost:4000/posts/2023-04-29-my-new-post/">&lt;p&gt;TCP vs UDP is of one the most common question to be asked in a SWE interview. In this post I will cover TCP and UDP
-in details and compare their differences.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3000/" rel="alternate" type="text/html" /><updated>2023-05-01T21:23:38+08:00</updated><id>http://localhost:3000/feed.xml</id><title type="html">Yi Heng Tan</title><subtitle>I&apos;m a software developer and designer from Chicago creating useful things for the web.</subtitle><author><name>Yi Heng Tan</name></author><entry><title type="html">Testing post</title><link href="http://localhost:3000/posts/2023-01-22-hellow/" rel="alternate" type="text/html" title="Testing post" /><published>2023-01-22T00:00:00+08:00</published><updated>2019-02-10T05:20:02+08:00</updated><id>http://localhost:3000/posts/hellow</id><content type="html" xml:base="http://localhost:3000/posts/2023-01-22-hellow/">&lt;p&gt;This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
 
-&lt;h2 id=&quot;lower-layers&quot;&gt;Lower Layers&lt;/h2&gt;
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
 
-&lt;p&gt;(klement: This &lt;a href=&quot;https://serverfault.com/questions/246508/how-is-the-mtu-is-65535-in-udp-but-ethernet-does-not-allow-frame-size-more-than&quot;&gt;Stack Exchange Thread&lt;/a&gt; was very useful in helping my understanding.)&lt;/p&gt;
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
 
-&lt;p&gt;To understand the differences between the UDP and TCP, we have to first understand the lower layers they depend on.&lt;/p&gt;
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
 
-&lt;p&gt;Data Link Layer (ethernet):&lt;/p&gt;
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
+
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
+
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
+
+&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.&lt;/p&gt;</content><author><name>Yi Heng Tan</name></author><category term="Blog" /><category term="Post Formats" /><category term="readability" /><category term="standard" /><summary type="html">This post has been updated and should show a modified date if used in a layout.</summary></entry><entry><title type="html">Investments</title><link href="http://localhost:3000/posts/2023-01-01-Investments/" rel="alternate" type="text/html" title="Investments" /><published>2023-01-01T00:00:00+08:00</published><updated>2019-02-10T05:20:02+08:00</updated><id>http://localhost:3000/posts/Investments</id><content type="html" xml:base="http://localhost:3000/posts/2023-01-01-Investments/">&lt;h1 id=&quot;investments&quot;&gt;Investments&lt;/h1&gt;
+
+&lt;h1 id=&quot;selling-options&quot;&gt;Selling Options&lt;/h1&gt;
+
+&lt;h2 id=&quot;wheel-strategy&quot;&gt;Wheel Strategy&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-cash-secured-put&quot;&gt;1. Cash Secured Put&lt;/h3&gt;
+
+&lt;p&gt;Sell a Put&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Overview: helps with the transferring of data between two nodes.&lt;/li&gt;
-  &lt;li&gt;Function:
-    &lt;ul&gt;
-      &lt;li&gt;Transfers the &lt;strong&gt;data frames&lt;/strong&gt; between two nodes connected by a physical link&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Ethernet protocol:
-    &lt;ul&gt;
-      &lt;li&gt;Has a maximum frame size of &lt;strong&gt;1518 bytes&lt;/strong&gt; unless &lt;strong&gt;jumbo frames&lt;/strong&gt; are supported&lt;/li&gt;
-      &lt;li&gt;Usually the &lt;strong&gt;Maximum Transmission Unit&lt;/strong&gt;(MTU) is set to the ethernet maximum frame size&lt;/li&gt;
-      &lt;li&gt;The protocol &lt;strong&gt;will not&lt;/strong&gt; accept data frame larger than maximum frame size&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Jumbo Frames:
-    &lt;ul&gt;
-      &lt;li&gt;Special configuration to allow larger than &lt;strong&gt;1518 bytes&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;To successfully transfer larger than &lt;strong&gt;1518 bytes&lt;/strong&gt;, all nodes in the network need to
-support jumbo frames.&lt;/li&gt;
-      &lt;li&gt;If any one of the nodes does not support jumbo frame, the data frame
-will not be able a transmit through.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Stock Price = $26&lt;/li&gt;
+  &lt;li&gt;Strike 25&lt;/li&gt;
+  &lt;li&gt;Premium = 0.50&lt;/li&gt;
+  &lt;li&gt;Expiry 10/2&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Network Layer (IP):&lt;/p&gt;
+&lt;p&gt;You place a limit sell order → 0.50 * 100 = $50 given to you&lt;/p&gt;
+
+&lt;p&gt;Sell option that is out of the money&lt;/p&gt;
+
+&lt;p&gt;if: stock price above 25 OTM when option expires → keep the premium ($50)&lt;/p&gt;
+
+&lt;p&gt;else: stock price belows 25 ITM → people will exercise when option is deeper ITM or closer to expiry → expires ITM → you are assigned → 25*100 = $2500 required in your account to buy the shares&lt;/p&gt;
+
+&lt;p&gt;If the stock price is 24, 2500 - 2400 = 100 loss + 50 gain from premium&lt;/p&gt;
+
+&lt;p&gt;CSP → Good if you want hold the underlying stock&lt;/p&gt;
+
+&lt;p&gt;Goal → collect premium and avoid assignment&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Avoid Assignment (Rolling)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;buying to close the position and buying another that is lower strike&lt;/p&gt;
+
+&lt;p&gt;choose another option that is furthur in the future&lt;/p&gt;
+
+&lt;p&gt;Initially sold Put 1 Strike 21 premium 100 →$100 collected&lt;/p&gt;
+
+&lt;p&gt;Current Stock price = 20&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Overview: allow transfering of &lt;strong&gt;packets&lt;/strong&gt; from a source node to a destination node through X number of nodes&lt;/li&gt;
-  &lt;li&gt;Function:
-    &lt;ul&gt;
-      &lt;li&gt;Deals with routing the packet through multiple intermediate nodes.&lt;/li&gt;
-      &lt;li&gt;Fragmentation: break down large packets into multiple smaller packets that is within the MTU limit&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Fragmentation:
-    &lt;ul&gt;
-      &lt;li&gt;If the data needed to be transported exceed the MTU, IP protocol will break down the
-packets into smaller packets (fragements)&lt;/li&gt;
-      &lt;li&gt;Each fragement packet will set the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fragement number&lt;/code&gt; and set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;more fragement&lt;/code&gt; bit (except last fragement) in the header&lt;/li&gt;
-      &lt;li&gt;If anyone of the smaller fragment packet is lost/corrupted, the entire large packet is marked as lost.&lt;/li&gt;
-      &lt;li&gt;Downside:
-        &lt;ul&gt;
-          &lt;li&gt;More protocol overhead - instead of one IP header, will need IP header for each smaller fragment packet&lt;/li&gt;
-          &lt;li&gt;brittle - if a fragment is lost/corrupted the entire packet is lost/corrupted&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Note: IP uses both datagram and packets to refer data being sent&lt;/li&gt;
+  &lt;li&gt;Put 1&lt;/li&gt;
+  &lt;li&gt;strike 21&lt;/li&gt;
+  &lt;li&gt;premium 150&lt;/li&gt;
+  &lt;li&gt;expiry 10/2&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;user-datagram-protocol-udp&quot;&gt;User Datagram Protocol (UDP)&lt;/h2&gt;
+&lt;p&gt;I have to buy back at 150 - 100(collected) = $50&lt;/p&gt;
 
-&lt;p&gt;UDP is a lightweight transport layer protocol that optimises for speed
-and trades off reliability of data transfer. UDP optimises for speed
-by having a &lt;strong&gt;connectionless protocol&lt;/strong&gt; and &lt;strong&gt;push&lt;/strong&gt; model.&lt;/p&gt;
+&lt;p&gt;Find a higher premium and longer expiry put to Sell → Put 2&lt;/p&gt;
 
-&lt;h3 id=&quot;how-udp-works&quot;&gt;How UDP works&lt;/h3&gt;
-
-&lt;p&gt;Unlike TCP, UDP does not have any specific flow that the receiver and sender must follow.
-When there are data to be sent, the sender the wrap the data as &lt;strong&gt;datagram&lt;/strong&gt; and send it to
-the receiver.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Header&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Adds Source port and Destination port to the header to allow the OS to know
-which process to direct the datagram to.&lt;/li&gt;
-  &lt;li&gt;Checksum:
-    &lt;ul&gt;
-      &lt;li&gt;Instead of traditional checksum, UDP uses a pseudo header method. Prepends IP layer data&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Fields:
-    &lt;ul&gt;
-      &lt;li&gt;Source Port: 16 bits&lt;/li&gt;
-      &lt;li&gt;Destination Port: 16 bits&lt;/li&gt;
-      &lt;li&gt;Length: 16 bits&lt;/li&gt;
-      &lt;li&gt;Checksum: 16 bits&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Put 2&lt;/li&gt;
+  &lt;li&gt;strike 19&lt;/li&gt;
+  &lt;li&gt;expiry 17/2&lt;/li&gt;
+  &lt;li&gt;premium 200&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Max Datagram Size&lt;/strong&gt;: Industry standard uses 512 byte.&lt;/p&gt;
+&lt;p&gt;Overall = 200 -50 = $150 Gain&lt;/p&gt;
 
-&lt;h3 id=&quot;udp-use-cases&quot;&gt;UDP use cases&lt;/h3&gt;
+&lt;p&gt;con: money is locked up as collateral&lt;/p&gt;
+
+&lt;p&gt;Collect more money than paying&lt;/p&gt;
+
+&lt;p&gt;Value of the option will decay due to theta&lt;/p&gt;
+
+&lt;p&gt;so you can buy back the option earlier to lock in the profit and sell a new option&lt;/p&gt;
+
+&lt;p&gt;Scenarios CSP&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;DNS: need to optimize for time when querying the server. Small payload -&amp;gt; fit in a single datagram&lt;/li&gt;
-  &lt;li&gt;Voice Over IP: can deal with loss but not low latency&lt;/li&gt;
+  &lt;li&gt;Expires OTM → keep premium&lt;/li&gt;
+  &lt;li&gt;Assignment → buy 100 shares (collateral is used)&lt;/li&gt;
+  &lt;li&gt;Roll your position → buy pos and sell another pos to avoid assignment&lt;/li&gt;
+  &lt;li&gt;Buy to close → free collateral&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;transport-control-protocol-tcp&quot;&gt;Transport Control Protocol (TCP)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Things to look for&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;The motivation behind TCP is intended for highly reliable host-to-host protocol.
-The protocol must be able to push data, recover from lost or damaged data, receiver must be able to
-control the flow of data being sent, allow for multiple process to communicate on TCP on a single machine,
-establish a connection.&lt;/p&gt;
+&lt;p&gt;Shares with high IV (&amp;gt;80%)&lt;/p&gt;
 
-&lt;p&gt;TCP uses the idea of &lt;strong&gt;packet&lt;/strong&gt; to represent the data of one transaction between hosts.&lt;/p&gt;
+&lt;p&gt;thetagang→ weekend IV Report&lt;/p&gt;
 
-&lt;h3 id=&quot;tcp-headers&quot;&gt;TCP Headers&lt;/h3&gt;
+&lt;p&gt;Delta = amount an option price move based on $1 change in underlying stock (between 0 and 1)&lt;/p&gt;
+
+&lt;p&gt;Delta = 0.9, $1 move in stock → $0.90 move in call option&lt;/p&gt;
+
+&lt;p&gt;Delta positive for call options&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Source Port&lt;/li&gt;
-  &lt;li&gt;Destination Port&lt;/li&gt;
-  &lt;li&gt;Sequence Number: 32 bits
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN=1&lt;/code&gt;: the initial sequence number.&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN=0&lt;/code&gt;: The sequence number of the first byte in this segment&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Acknowledgment Number: 32 bit
-    &lt;ul&gt;
-      &lt;li&gt;The next sequence number the sender (sender or receiver) of the segment is expecting to receive&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Data Offset: 4 bits
-    &lt;ul&gt;
-      &lt;li&gt;The number of 32 bit words in TCP header. Used to tell when the data begins&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Reserved: 6 bits&lt;/li&gt;
-  &lt;li&gt;Control Bits:
-    &lt;ul&gt;
-      &lt;li&gt;Used to state the different controls&lt;/li&gt;
-      &lt;li&gt;Notables: ACK, SYN, FIN&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Window:
-    &lt;ul&gt;
-      &lt;li&gt;The number of data octets beginning with the one indicated in the 
-acknowledgement field which the sender is willing to accept&lt;/li&gt;
-      &lt;li&gt;How many packets after the ACK it is can receive&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Checksum
-    &lt;ul&gt;
-      &lt;li&gt;Similar to UDP, the checksum includes pseudo header&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Urgent Pointer&lt;/li&gt;
+  &lt;li&gt;30 days expiry&lt;/li&gt;
+  &lt;li&gt;0.3 Delta ⇒ 70% chance of expiring worthless&lt;/li&gt;
+  &lt;li&gt;Sell put option → SELL ORDER&lt;/li&gt;
+  &lt;li&gt;Limit order between bid and ask / market order&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;tcp-concepts&quot;&gt;TCP Concepts&lt;/h3&gt;
+&lt;h1 id=&quot;investing&quot;&gt;Investing&lt;/h1&gt;
 
-&lt;h4 id=&quot;sequence-number&quot;&gt;Sequence number&lt;/h4&gt;
+&lt;h2 id=&quot;purchase-requirements&quot;&gt;Purchase requirements&lt;/h2&gt;
 
-&lt;p&gt;All packets will have a sequence number. This allows the other party to send an ACK on a sequence number.
-When the receiver acknowledges &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; this means that all packets till &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x-1&lt;/code&gt; has been received.&lt;/p&gt;
+&lt;h2 id=&quot;sbc&quot;&gt;SBC&lt;/h2&gt;
 
-&lt;p&gt;The host can choose any sequence number to start with.&lt;/p&gt;
+&lt;p&gt;SBC → included in cost of revenue and operating expenses on the income statement&lt;/p&gt;
 
-&lt;h4 id=&quot;tcp-connection&quot;&gt;TCP connection&lt;/h4&gt;
+&lt;p&gt;affects gross profit, operating income and net income&lt;/p&gt;
 
-&lt;h5 id=&quot;opening-connection&quot;&gt;Opening connection&lt;/h5&gt;
+&lt;p&gt;non cash expense&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;    TCP A                                                TCP B
+&lt;p&gt;However, added back when calculating operating cash flow → artifically inflate the ash flow margin of the business&lt;/p&gt;
 
-1.  CLOSED                                               LISTEN
-
-2.  SYN-SENT    --&amp;gt; &amp;lt;SEQ=100&amp;gt;&amp;lt;CTL=SYN&amp;gt;               --&amp;gt; SYN-RECEIVED
-
-3.  ESTABLISHED &amp;lt;-- &amp;lt;SEQ=300&amp;gt;&amp;lt;ACK=101&amp;gt;&amp;lt;CTL=SYN,ACK&amp;gt;  &amp;lt;-- SYN-RECEIVED
-
-4.  ESTABLISHED --&amp;gt; &amp;lt;SEQ=101&amp;gt;&amp;lt;ACK=301&amp;gt;&amp;lt;CTL=ACK&amp;gt;       --&amp;gt; ESTABLISHED
-
-5.  ESTABLISHED --&amp;gt; &amp;lt;SEQ=101&amp;gt;&amp;lt;ACK=301&amp;gt;&amp;lt;CTL=ACK&amp;gt;&amp;lt;DATA&amp;gt; --&amp;gt; ESTABLISHED
-&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-  &lt;li&gt;TCP connection is established only after three packets has been sent&lt;/li&gt;
-  &lt;li&gt;Three Way handshake
+  &lt;li&gt;using a cash-flow multiple valuation can be misleading if the company aggressively uses SBC
+    &lt;ul&gt;
+      &lt;li&gt;use free cash flow net of SBC&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SBC to revenue ratio not too high&lt;/li&gt;
+  &lt;li&gt;ensure Buyback rate &amp;gt; SBC issuance rate can help mitigate dilution risks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;forward-pe-ratio&quot;&gt;Forward P/E Ratio&lt;/h2&gt;
+
+&lt;p&gt;16.82 2-5 year average&lt;/p&gt;
+
+&lt;p&gt;aim for 15 to 14 Forward PE&lt;/p&gt;
+
+&lt;p&gt;Companies’ Investor relations → read offical press release and forecast&lt;/p&gt;
+
+&lt;p&gt;Net cash provided by operating activities&lt;/p&gt;
+
+&lt;h2 id=&quot;enterprise-value&quot;&gt;Enterprise Value&lt;/h2&gt;
+
+&lt;p&gt;(Income statement) Gains on strategic investments = usually 1 time and not part of the business/income&lt;/p&gt;
+
+&lt;p&gt;project revenue growth by percentage and the growth of the industry as a whole&lt;/p&gt;
+
+&lt;p&gt;eg: semiconductors, market share&lt;/p&gt;
+
+&lt;p&gt;project the margins&lt;/p&gt;
+
+&lt;h2 id=&quot;dcf&quot;&gt;DCF&lt;/h2&gt;
+
+&lt;p&gt;The industries that most lend themselves to a DCF analysis are those with stable, forecastable cash flows and systematic risks that are easily defined.&lt;/p&gt;
+
+&lt;p&gt;FCF = Cash flow from operations - Capital Expenditure&lt;/p&gt;
+
+&lt;p&gt;market cap/fcf&lt;/p&gt;
+
+&lt;p&gt;or fcf per share over stock price&lt;/p&gt;
+
+&lt;h2 id=&quot;investing-for-growth&quot;&gt;Investing for Growth&lt;/h2&gt;
+
+&lt;p&gt;Management have 3 main options for deploying cash returns:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;return cash to shareholders via dividends or buyback&lt;/li&gt;
+  &lt;li&gt;invest to grow the business organically&lt;/li&gt;
+  &lt;li&gt;make acqusitions&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Criteria for making these options are important&lt;/p&gt;
+
+&lt;p&gt;invest in companies that shown great resilience over a long period of time&lt;/p&gt;
+
+&lt;p&gt;trailing free cash flow yield 7%&lt;/p&gt;
+
+&lt;p&gt;free cash flow yield = fcff / enterprise value&lt;/p&gt;
+
+&lt;p&gt;above average return on capital (32%)&lt;/p&gt;
+
+&lt;p&gt;higher than average for gross margins, operating margins, return on operating capital and conversion of profits into cash&lt;/p&gt;
+
+&lt;p&gt;holding shares in major, conservatively financed companies which make their profits from a large number of small, everyday, predictable events is a relatively safe place to be if you have the patience, fortitude and liquidity to ride out the share price volatility which is likely to occur in such circumstances&lt;/p&gt;
+
+&lt;p&gt;Increase in free cash flow is derived from top-line volume growth, albeit from companies which are able to maintain good prices and high margins on their sales&lt;/p&gt;
+
+&lt;p&gt;FCF growth can be due to share buybacks or cost-cutting, avoid&lt;/p&gt;
+
+&lt;p&gt;Ensure adequate return on capital&lt;/p&gt;
+
+&lt;p&gt;Return on Capital Employed = Cash operating profit / (equity + long-term liabilities)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FCF yield to be above long-term government bonds&lt;/li&gt;
+  &lt;li&gt;less capital intensive. earnings generated with less capital = return on capital employed higher than the average&lt;/li&gt;
+  &lt;li&gt;Deliver more of their earnings in cash&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;roce&quot;&gt;ROCE&lt;/h2&gt;
+
+&lt;p&gt;ROCE = return on capital employed = primary ratio&lt;/p&gt;
+
+&lt;p&gt;measures the profitability of a company and the efficiency with which it uses its capital&lt;/p&gt;
+
+&lt;p&gt;look for stable rising ROCE&lt;/p&gt;
+
+&lt;p&gt;EBIT = revenue - COGS - operating expenses&lt;/p&gt;
+
+&lt;p&gt;Capital Employed = Total Assets - current liabilties&lt;/p&gt;
+
+&lt;p&gt;ROCE = EBIT / Capital Employed&lt;/p&gt;
+
+&lt;p&gt;ROCE = operating cash flow / sum of shareholders’ equity and net debt&lt;/p&gt;
+
+&lt;p&gt;higher is better&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Look for Revenue increase YOY and Operating cash flow increase YOY&lt;/li&gt;
+  &lt;li&gt;ensure margins are good (Operating cashflow/revenue &amp;gt;30%)&lt;/li&gt;
+  &lt;li&gt;check for free cash flow yield (FCF/market cap) over 8%&lt;/li&gt;
+  &lt;li&gt;Return on capital: if EPS growth is generated at the expense of return on capital, it destroys value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A strategy of investing in consumer staples companies with the bulk of their operations in developing markets has substantially outperformed the other emerging markets investment strategies that I reviewed in my previous article, over the past five to ten years. Of course, the past is an imperfect guide to the future but it would be unwise to ignore the rapid and predictable growth in consumption of everyday necessities and luxuries when considering investment in emerging markets.&lt;/p&gt;
+
+&lt;p&gt;Never invest in a business which requires leverage or borrowings to make an adequate return on equity&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ROCE = consistently high + find a source of growth&lt;/li&gt;
+  &lt;li&gt;Gross margin = (gross revenue - cogs) / gross revenue&lt;/li&gt;
+  &lt;li&gt;operating profit margin&lt;/li&gt;
+  &lt;li&gt;cash conversion = profits into cash&lt;/li&gt;
+  &lt;li&gt;leverage = net debt / equity&lt;/li&gt;
+  &lt;li&gt;interest cover = ability to service its debt&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ability to increase their capex and free cash flow per share&lt;/p&gt;
+
+&lt;p&gt;A company that can sustain a return on capital above its cost of capital creates value for its shareholders, who should want it to retain at least part of its profits to reinvest at these attractive rates of return rather than handing them all over as dividends or using them to buy back shares.&lt;/p&gt;
+
+&lt;p&gt;Cost of capital can be found via notes to its accounts&lt;/p&gt;
+
+&lt;p&gt;ROCE = operating cash flow / sum of shareholders’ equity and net debt&lt;/p&gt;
+
+&lt;p&gt;FCF calculation = cash after paying for everthing except the dividends&lt;/p&gt;
+
+&lt;p&gt;Look for companies that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;are able to pay dividend but choose to reinvest&lt;/li&gt;
+  &lt;li&gt;retain most of earnings for reinvesment and pay a dividend&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is the rate of return on reinvestment earnings or dividend that makes the most difference → high ROCE&lt;/p&gt;
+
+&lt;p&gt;making money from a large number of everyday repeat transactions, having a base of loyal customers&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Investments%207dce9e8dfc0f4c0994af168a4f799ca5/Screenshot_2023-03-02_at_12.11.52_PM.png&quot; alt=&quot;Screenshot 2023-03-02 at 12.11.52 PM.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Growth in FCF yield&lt;/p&gt;
+
+&lt;p&gt;Sell = if the valuation is only justifiable if the current rapid rate of growth was sustainable, and you doubt the growth&lt;/p&gt;
+
+&lt;p&gt;sell = if company embarks on acitivities that are outside their core area of competence&lt;/p&gt;
+
+&lt;p&gt;If you are a long-term investor, the return on capital which a company can generate, and its ability to reinvest at a superior rate of return, is more likely to determine how well its shares do – and not the valuation at which you buy or sell it.&lt;/p&gt;
+
+&lt;p&gt;Consumer staples&lt;/p&gt;
+
+&lt;p&gt;Markets are second order systems = to usefully employ your predictions you need to make correct predictions and guage what the markets expected to occur in order to predict how they would react&lt;/p&gt;
+
+&lt;p&gt;The company must have a source of growth to enable it to reinvest retained earnings&lt;/p&gt;
+
+&lt;p&gt;the growth has to provide an opportunity for it to reinvest a good rate&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Superior returns on capital employed and a source of growth which enables it to reinvest a substantial portion of those returns, the result is compund growth it its value and share price over time&lt;/li&gt;
+  &lt;li&gt;Offer a superior product or service to customers which enables them to generate these impressive financial returns and prevent competition from eroding them (MOAT)&lt;/li&gt;
+  &lt;li&gt;An assessment of the company’s products, services, maangement, competitive positioning and prospects should lead you to determine what share price you might be willing to pay for it, not the other way round&lt;/li&gt;
+  &lt;li&gt;small ticket consumer non-durable products, consumables&lt;/li&gt;
+  &lt;li&gt;Trailing FCF yield was 7%. FCF distributed as dividends, share buybacks or invested by the companies in order to generate furthur returns. Return on operating assets 50%&lt;/li&gt;
+  &lt;li&gt;FCF yield higher than average, higher quality in terms of longevity, resilience, predictability, profit margins, return on operating capital and the conversion of profits into cash&lt;/li&gt;
+  &lt;li&gt;own higher quality companies that the market but lower valuation&lt;/li&gt;
+  &lt;li&gt;produce high cash returns on cpaital and distribute part of those returns as dividends or reinvest the remainder at similar rates of return&lt;/li&gt;
+  &lt;li&gt;share buybacks only create value if the shares repurchased are trading below intrinsic value and there is no better use for the cash which would generate a higher return&lt;/li&gt;
+  &lt;li&gt;use return on equity to analyse the effects of share buybacks rather than earnings per share&lt;/li&gt;
+  &lt;li&gt;CROCI = cash return on cash invested&lt;/li&gt;
+  &lt;li&gt;look for boring quality companies which have predictable returns and superior fundamnetla financial performance, and take advantage of their persistent underavaaluation relative to those returns to buy and hold them&lt;/li&gt;
+  &lt;li&gt;invest only in companies which make high returns on capital employed → convert most or all of their profits into cash → high profit margins → proved resilient to economic cycles over many decades&lt;/li&gt;
+  &lt;li&gt;ensure that earnings are predictable → from core business revenue and not special one time revenue, understand where the company is earning money from&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;a company will create value only if its ROIC is greater than its cost of capital&lt;/p&gt;
+
+&lt;p&gt;ROICE &amp;gt; Cost of capital&lt;/p&gt;
+
+&lt;p&gt;high-ROIC companies typically create more value by focusing on growth&lt;/p&gt;
+
+&lt;p&gt;while lower-ROIC companies create more value by increasing ROIC.&lt;/p&gt;
+
+&lt;p&gt;FCF = Net cash provided by operating activities - Purchases of property and equipment&lt;/p&gt;
+
+&lt;p&gt;should minus off the stock-based compensation expense from net cash provided by operating activities&lt;/p&gt;
+
+&lt;h2 id=&quot;moat&quot;&gt;MOAT&lt;/h2&gt;
+
+&lt;p&gt;sources of competitive advantage&lt;/p&gt;
+
+&lt;p&gt;The key to investing is not assessing how much an industry is going to affect society, or how much it will grow, but rather determining the competitive advantage of any given company and, above all, the durability of that advantage.&lt;/p&gt;
+
+&lt;p&gt;Economic Moats:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Intangible assets = brand recognition and loyalty / patents / government licenses&lt;/li&gt;
+  &lt;li&gt;Economies of scale&lt;/li&gt;
+  &lt;li&gt;Network effects = more valuable as more users join&lt;/li&gt;
+  &lt;li&gt;Switching costs&lt;/li&gt;
+  &lt;li&gt;Cost advantages&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.appeconomyinsights.com/p/the-art-of-spotting-economic-moats&quot;&gt;🏰 The Art of Spotting Economic Moats&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Identification:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;analyze industry trends → high barriers to entry → dominant players with strong market position → look for categories where a competitive edge can compound over time and understand how the market participants make money and how profit is spread&lt;/li&gt;
+  &lt;li&gt;assess competitive advantages → brand recongition , economies of scale or patent, pricing power, market share gains, sales and marketing expenses compared to competitors&lt;/li&gt;
+  &lt;li&gt;management quality&lt;/li&gt;
+  &lt;li&gt;financial metrics → gross profit margin → ROIC &amp;gt; WACC → FCF → long term debt to equity ratio → EPS growth&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Price Premium
+    &lt;ul&gt;
+      &lt;li&gt;innovative product: difficult to copy or patent&lt;/li&gt;
+      &lt;li&gt;Quality: customers willing to pay a premium for a real or perceived difference in quality over competing products&lt;/li&gt;
+      &lt;li&gt;Brand: pay premium based on brand&lt;/li&gt;
+      &lt;li&gt;Customer lock in: customers unwilling or unable to replace product or service&lt;/li&gt;
+      &lt;li&gt;Rational price discipline&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cost and capital efficiency
+    &lt;ul&gt;
+      &lt;li&gt;innovative business method: difficult to copy business method that contrasts with established industry practice&lt;/li&gt;
+      &lt;li&gt;unique resources: inherent geological characteristics or unique access to raw materials&lt;/li&gt;
+      &lt;li&gt;Economies of scale&lt;/li&gt;
+      &lt;li&gt;scalable product/process: ability to add customers and capacity at negligible marginal cost&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;method&quot;&gt;Method&lt;/h1&gt;
+
+&lt;p&gt;Buy good companies every month. Double down on dips&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Revenue growth&lt;/li&gt;
+  &lt;li&gt;MOAT&lt;/li&gt;
+  &lt;li&gt;Profit margin growth&lt;/li&gt;
+  &lt;li&gt;Share Dilution&lt;/li&gt;
+  &lt;li&gt;EPS&lt;/li&gt;
+  &lt;li&gt;Insider trading&lt;/li&gt;
+  &lt;li&gt;5 year growth plan&lt;/li&gt;
+  &lt;li&gt;10 year growth plan&lt;/li&gt;
+  &lt;li&gt;Catalysts&lt;/li&gt;
+  &lt;li&gt;EBITDA growth&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;dfv&quot;&gt;DFV&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;sizeable discount&lt;/li&gt;
+  &lt;li&gt;historical operating performance&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;revenue, balance sheet, earnings, cash flow, gross and net margin, share count&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;technical analysis: trends and sentiment&lt;/li&gt;
+  &lt;li&gt;leveraged companies: analyze credit risk, yield on publicly traded debt(finra), ratings agency, who owns the debt, reasons for the ratings&lt;/li&gt;
+  &lt;li&gt;insider buying, during market selloffs, buying by prominent executives (5+, 500k min) buying before or after sell off&lt;/li&gt;
+  &lt;li&gt;Ownership (at least 20% of insider)&lt;/li&gt;
+  &lt;li&gt;Check out seeking alpha research&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;burry&quot;&gt;Burry&lt;/h2&gt;
+
+&lt;p&gt;intrinsic value&lt;/p&gt;
+
+&lt;p&gt;competitive advantage&lt;/p&gt;
+
+&lt;p&gt;margin of safety&lt;/p&gt;
+
+&lt;p&gt;EV/EBITDA, Compare within industry&lt;/p&gt;
+
+&lt;p&gt;EV = market cap + debt - cash (operational value of the business)&lt;/p&gt;
+
+&lt;p&gt;Value catalysts (google news on why price moves violently)&lt;/p&gt;
+
+&lt;h2 id=&quot;magic-formula&quot;&gt;Magic Formula&lt;/h2&gt;
+
+&lt;p&gt;Earnings Yield = EBIT / Enterprise Value&lt;/p&gt;
+
+&lt;p&gt;ROIC = EBIT / (Net Tangible Assets + Net Working Capital)&lt;/p&gt;
+
+&lt;p&gt;use 3 year average pre-tax earnings and return on tangible assets&lt;/p&gt;
+
+&lt;h2 id=&quot;piotroski-f-score&quot;&gt;Piotroski F-Score&lt;/h2&gt;
+
+&lt;p&gt;Profitability, capital structure, and operating efficiency.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Profitability (4 points total)&lt;/strong&gt;• Positive Net Income (1 point)• Positive return on assets in the current year (1 point)• Positive operating cash flow in the current year (1 point)• Cash flow from operations being greater than net Income (quality of earnings) (1 point)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Capital Structure (3 points total)&lt;/strong&gt;• Lower ratio of long-term debt in the current period, compared to the previous year (decreased leverage) (1 point)• Higher current ratio this year compared to the previous year (more liquidity) (1 point)• No new shares were issued in the last year (lack of dilution) (1 point).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Operating Efficiency (2 points total)&lt;/strong&gt;• A higher gross margin compared to the previous year (1 point)• A higher asset turnover ratio compared to the previous year (1 point)&lt;/p&gt;
+
+&lt;p&gt;The points are then added together. &lt;strong&gt;The tables below present the Piotroski scores for the last three years, the combined score of those years (Total Score), and the trailing twelve months score (TTM)&lt;/strong&gt;. By combining the score of the latest three years (Total Score), there is a better chance to find companies that have a consistent track of superior performance. TTM can help you find companies that have done well over the most recent 12 months.&lt;/p&gt;
+
+&lt;p&gt;Note that while the score is helpful in determining the strength of a firm’s financial position, it says nothing about the price at which it is selling.&lt;/p&gt;
+
+&lt;h2 id=&quot;joseph-carlson&quot;&gt;Joseph Carlson&lt;/h2&gt;
+
+&lt;p&gt;Income Statement&lt;/p&gt;
+
+&lt;p&gt;Revenue growth&lt;/p&gt;
+
+&lt;p&gt;EBITDA growth&lt;/p&gt;
+
+&lt;p&gt;Free cashflow&lt;/p&gt;
+
+&lt;p&gt;Margins&lt;/p&gt;
+
+&lt;p&gt;Net income&lt;/p&gt;
+
+&lt;p&gt;Balance Sheet&lt;/p&gt;
+
+&lt;p&gt;Long term debt (low) vs Cash balance (high) = Net Cash Positon&lt;/p&gt;
+
+&lt;p&gt;EPS&lt;/p&gt;
+
+&lt;p&gt;Shares outstanding (lower)&lt;/p&gt;
+
+&lt;h1 id=&quot;watchlist&quot;&gt;Watchlist&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Microsoft&lt;/li&gt;
+  &lt;li&gt;Nvidia&lt;/li&gt;
+  &lt;li&gt;Meta&lt;/li&gt;
+  &lt;li&gt;Google&lt;/li&gt;
+  &lt;li&gt;Tesla&lt;/li&gt;
+  &lt;li&gt;Amd&lt;/li&gt;
+  &lt;li&gt;Netflix&lt;/li&gt;
+  &lt;li&gt;Amazon&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;trades&quot;&gt;Trades&lt;/h1&gt;
+
+&lt;p&gt;Important!!!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ensure option vol
     &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; will establish a connection to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; and stating the initial sequence number(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100&lt;/code&gt;) that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; uses.&lt;/li&gt;
-      &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; receives the packet from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; will acknowledge it by stating.
-the next sequence number it wants to receive (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100 + 1&lt;/code&gt;) and state the 
-sequence number it will start with.&lt;/li&gt;
-      &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; receives the packet from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; will acknowledge it by stating that it want to receive the next sequence number (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;300+1&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;Breakout from open price&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;ol&gt;
+      &lt;li&gt;2nd 5mins candle confirmation (did not close below open price)&lt;/li&gt;
+      &lt;li&gt;strong pre-market price&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:3000/assets/images/Screenshot_2022-05-13_at_10.50.33_PM.png&quot; alt=&quot;Screenshot 2022-05-13 at 10.50.33 PM.png&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:3000/assets/images/Screenshot_2022-05-13_at_10.53.55_PM.png&quot; alt=&quot;Screenshot 2022-05-13 at 10.53.55 PM.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open strong candles 5mins
+    &lt;ol&gt;
+      &lt;li&gt;relative volume above average&lt;/li&gt;
+      &lt;li&gt;2 big green 5min, if 3rd never close below, enter&lt;/li&gt;
+      &lt;li&gt;big green = lower wicks
+ &lt;img src=&quot;http://localhost:3000/assets/images/Screenshot_2022-05-13_at_10.58.04_PM.png&quot; alt=&quot;Screenshot 2022-05-13 at 10.58.04 PM.png&quot; /&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Why three-way handshake&lt;/strong&gt;: To prevent old connection from causing confusion.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so/c15decb7394f4346847bdb687b51f857&quot;&gt;Trade Journal&lt;/a&gt;&lt;/p&gt;</content><author><name>Yi Heng Tan</name></author><category term="Post" /><category term="Investments" /><summary type="html">my investing notes</summary></entry><entry><title type="html">BANANA</title><link href="http://localhost:3000/posts/2018-08-20-bananas/" rel="alternate" type="text/html" title="BANANA" /><published>2018-08-20T00:00:00+08:00</published><updated>2019-02-10T05:20:02+08:00</updated><id>http://localhost:3000/posts/bananas</id><content type="html" xml:base="http://localhost:3000/posts/2018-08-20-bananas/">&lt;p&gt;A banana is an edible fruit – botanically a berry – produced by several
+kinds of large herbaceous flowering plants in the genus Musa.&lt;/p&gt;
 
-&lt;h5 id=&quot;closing-connection&quot;&gt;Closing connection&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;    TCP A                                                TCP B
-
-1.  ESTABLISHED                                          ESTABLISHED
-
-2.  (Close)
-    FIN-WAIT-1  --&amp;gt; &amp;lt;SEQ=100&amp;gt;&amp;lt;ACK=300&amp;gt;&amp;lt;CTL=FIN,ACK&amp;gt;  --&amp;gt; CLOSE-WAIT
-
-3.  FIN-WAIT-2  &amp;lt;-- &amp;lt;SEQ=300&amp;gt;&amp;lt;ACK=101&amp;gt;&amp;lt;CTL=ACK&amp;gt;      &amp;lt;-- CLOSE-WAIT
-
-4.                                                       (Close)
-    TIME-WAIT   &amp;lt;-- &amp;lt;SEQ=300&amp;gt;&amp;lt;ACK=101&amp;gt;&amp;lt;CTL=FIN,ACK&amp;gt;  &amp;lt;-- LAST-ACK
-
-5.  TIME-WAIT   --&amp;gt; &amp;lt;SEQ=101&amp;gt;&amp;lt;ACK=301&amp;gt;&amp;lt;CTL=ACK&amp;gt;      --&amp;gt; CLOSED
-
-6.  (2 MSL)
-    CLOSED
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; has completed sending all data and would like to close the connection,
-it will set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIN&lt;/code&gt; bit.&lt;/li&gt;
-  &lt;li&gt;When &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; receive the packet, it will ACK &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;’s close connection packet but
-will still send any data left on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; side&lt;/li&gt;
-  &lt;li&gt;Once &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; has completed sending the data, it will send a close connection packet to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Once &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; receives the close packet from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; it will close and send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; a packet to ACK it&lt;/li&gt;
-  &lt;li&gt;After receiving &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;’s ACK of closing, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; will close the connection.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;data-transfer&quot;&gt;Data Transfer&lt;/h3&gt;
-
-&lt;p&gt;TCP has the following key features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Ordered data transfer&lt;/strong&gt;: the destination will re-arrange the segments in order&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Retransmission of lost packets&lt;/strong&gt;: any cumulative stream not ACKed will be re-transmitted&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Error-free data transfer&lt;/strong&gt;: corrupted segments are treated as lost and re-transmitted&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Flow control&lt;/strong&gt;: limits the rate a sender transfer data to guarantee reliable delivery&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Congestion control&lt;/strong&gt;: lost packet due to congestion will lead to reduction in data delivery&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;reliable-transmission&quot;&gt;Reliable Transmission&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Uses sequence number to determine the ordering of the segments&lt;/li&gt;
-  &lt;li&gt;Receiver uses &lt;strong&gt;ACK&lt;/strong&gt; to tell the sender that it is now the sender turn to send data&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;dup-ack-based-retransmission&quot;&gt;Dup-ACK based retransmission&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If a segment (ie: 100) is lost, the receiver cannot send ACK higher than what it never receive (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK &amp;gt; 100&lt;/code&gt;)
-. The sender will ack the latest in order segment (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK=100&lt;/code&gt; the ack sequence number is one more than latest segment).&lt;/li&gt;
-  &lt;li&gt;Result in the receiver sending duplicate ACK (might have previously send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK=100&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;If the sender receive &lt;strong&gt;3&lt;/strong&gt; duplicate ACKs, the sender will send the same segment again
-    &lt;ul&gt;
-      &lt;li&gt;Choose 3 as some segments might arrive out of order causing unneccessary ACKs&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;timeout-based-retransmission&quot;&gt;Timeout-based retransmission&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sender will make a conservative estimate of the RTT.&lt;/li&gt;
-  &lt;li&gt;If the receiver does not ACK with in the threshold time, the sender will retransmit.&lt;/li&gt;
-  &lt;li&gt;The timeout of the retransmit will be double to allow for a exponential back-off&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;error-detection&quot;&gt;Error detection&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Uses checksum to determine if a segment has been corrupted&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;flow-control&quot;&gt;Flow control&lt;/h4&gt;
-
-&lt;p&gt;Control the flow of data to allow devices of different specs to communicate&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Act of reducing the transmission rate when the receiver has maxed out its resources&lt;/li&gt;
-  &lt;li&gt;In each TCP segment, the receiver will state the &lt;strong&gt;receive window&lt;/strong&gt;, the number of bytes it is willing to add
-to the buffer&lt;/li&gt;
-  &lt;li&gt;The sender will be able to send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt; number of segments with bytes less than the receive window without waiting
-for an ACK by the receiver&lt;/li&gt;
-  &lt;li&gt;If the receiver advertise window to be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; (buffer full):
-    &lt;ul&gt;
-      &lt;li&gt;The sender will start a persist timer&lt;/li&gt;
-      &lt;li&gt;Once persist timer times out, it sender will start by sending a small segment to unlock the dead lock&lt;/li&gt;
-      &lt;li&gt;Possible Deadlock: The sender receive that the window &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=0&lt;/code&gt; and do not send anymore segments. However, the
-receiver clear the buffer and send a segment to advertise that the window &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;0&lt;/code&gt; gets lost. Both the sender and
-receiver will be waiting on each other.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;congestion-control&quot;&gt;Congestion Control&lt;/h4&gt;
-
-&lt;p&gt;Congestion control is the act of reducing transmission rate when the network is congested.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Congestion Windows&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The maximum number of bytes that can be send through the network at anytime.&lt;/li&gt;
-  &lt;li&gt;Multiple of Maximum Segment Size (MSS)&lt;/li&gt;
-  &lt;li&gt;Totally different from the receiver sliding window&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Algorithms&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Slow start: Start with a small congestion window and keep doubling until retransmission is needed.
-Assume loss of packet is due to congestion in the network&lt;/li&gt;
-  &lt;li&gt;Congestion avoidance:
-    &lt;ul&gt;
-      &lt;li&gt;Once the congestion window slow start algorithm reach a certain size, slow start threshold(ssthresh),
-the algorithm will change to linear growth.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;handling-multiple-connections&quot;&gt;Handling Multiple connections&lt;/h4&gt;
-
-&lt;p&gt;A TCP connection session is uniquely identified by the client &lt;strong&gt;IP&lt;/strong&gt; and &lt;strong&gt;PORT&lt;/strong&gt; number. The
-OS will have a Transmission Control Block (&lt;strong&gt;TCB&lt;/strong&gt;) that maps the &lt;strong&gt;CLIENT_IP:CLIENT_PORT:SEVER_PORT&lt;/strong&gt; 
-to the process that holds owns the connection.&lt;/p&gt;
-
-&lt;h4 id=&quot;maximum-segment-size&quot;&gt;Maximum segment size&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Maximum Transmission Unit&lt;/strong&gt; (MTU):
-    &lt;ul&gt;
-      &lt;li&gt;The largest data that can be transmitted over the network layer (IP).&lt;/li&gt;
-      &lt;li&gt;Each device will know the MTU size of the interface it is connected to.&lt;/li&gt;
-      &lt;li&gt;If data &amp;gt; MTU, IP layer will split packets into smaller fragments (&lt;strong&gt;IP fragmentation&lt;/strong&gt;)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Maximum Segment Size&lt;/strong&gt; (MSS):
-    &lt;ul&gt;
-      &lt;li&gt;The maximum segment size that can be transmitted over the application layer (TCP)
-        &lt;ul&gt;
-          &lt;li&gt;Segment is the data component of a TCP packet (does not include TCP headers)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Each device will determine on its own MSS based on its own MTU.
-        &lt;ul&gt;
-          &lt;li&gt;Normally, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MSS = MTU - sizeof(IP headers)[20 bytes] - sizeof(TCP headers)[20 bytes]&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;During connection establishment phase, the devices will announce their own MSS&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;tcp-vs-udp&quot;&gt;TCP vs UDP&lt;/h3&gt;
-
-&lt;h4 id=&quot;sending-large-payload&quot;&gt;Sending large payload&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;UDP&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Not good at sending large payload&lt;/li&gt;
-  &lt;li&gt;Forces all data to be sent as a single datagram through IP layer&lt;/li&gt;
-  &lt;li&gt;If the payload &amp;gt; MTU, IP layer will be forced to use fragmentation to split the large data into smaller
-fragments that are within the MTU&lt;/li&gt;
-  &lt;li&gt;This will result in the packet to be &lt;strong&gt;easily lost&lt;/strong&gt; through the IP layer
-    &lt;ul&gt;
-      &lt;li&gt;Any one of the fragment lost/corrupted the entire packet is lost/corrupted&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;UDP has not ACK -&amp;gt; cannot recover lost datagram&lt;/li&gt;
-  &lt;li&gt;Small datagram of size &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;512&lt;/code&gt; bytes can be reliably transferred with the guarantee that there wont be fragmentation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;TCP&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Good for sending large payload&lt;/li&gt;
-  &lt;li&gt;Does not send a large packet to IP layer with fragmentation&lt;/li&gt;
-  &lt;li&gt;Split the packet into multiple smaller packets within the size of MSS (implies that the IP packet within the MTU)
-    &lt;ul&gt;
-      &lt;li&gt;Each packet send to IP layer is within MSS =&amp;gt; no fragmentation =&amp;gt; less prone to lost/corruption&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Uses ACK and sequence number to ensure that all the smaller packets are reliably sent
-    &lt;ul&gt;
-      &lt;li&gt;Receiver will receive the complete large payload.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;broadcast-and-mutli-cast&quot;&gt;Broadcast and Mutli-cast&lt;/h4&gt;
-
-&lt;p&gt;IP multicast:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;IP provides &lt;strong&gt;Internet Group Management Protocol&lt;/strong&gt; (IGMP)&lt;/li&gt;
-  &lt;li&gt;Functionality:
-    &lt;ul&gt;
-      &lt;li&gt;Source can send a single datagram to a IGMP IP address and routers will automatically duplicate it and send to members of the group.&lt;/li&gt;
-      &lt;li&gt;Nodes can send message to IGMP to be added to the group.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;A set of reserved IP range 224.0.0.0 to 239.255.255.255 are reserved for IGMP&lt;/li&gt;
-  &lt;li&gt;A group of multicast destination can hide behind a single IGMP IP address - senders do not need to send the packet to each
-member&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;UDP vs TCP:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;UDP can muilticast but TCP cannot.&lt;/li&gt;
-  &lt;li&gt;Impossible for TCP to use multicast cast as it requires establishing a connection (the IP address is just a proxy to multiple nodes)&lt;/li&gt;
-  &lt;li&gt;IGMP is only demultiplex the message cannot multiplex the ACKs from the members&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Yi Heng Tan</name></author><category term="Post" /><category term="Networks" /><summary type="html">A comparison of TCP and UDP</summary></entry></feed>
+&lt;p&gt;In some countries, bananas used for cooking may be called “plantains”,
+distinguishing them from dessert bananas. The fruit is variable in size,
+color, and firmness, but is usually elongated and curved, with soft
+flesh rich in starch covered with a rind, which may be green, yellow,
+red, purple, or brown when ripe.&lt;/p&gt;</content><author><name>Yi Heng Tan</name></author><category term="Post" /><summary type="html">A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.</summary></entry></feed>

@@ -283,6 +283,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-sitemap
   jemoji
+  kramdown-parser-gfm
   tzinfo-data
   webrick (~> 1.8)
 

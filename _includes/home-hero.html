@@ -1,0 +1,69 @@
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
+
+<head>
+
+<link rel="stylesheet" href="{{ "/css/animate.min.css" | prepend: site.baseurl }}">
+<link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
+</head>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="hero-container">
+
+        <div class="hero-content">
+          {% if author.avatar %}
+          <div class="home_avatar text-center">
+            <a href="{{ author.home | default: '/' | absolute_url }}">
+              <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" class="u-photo">
+            </a>
+          </div>
+        {% endif %}
+          {% if site.title != '' %}
+          <h1 class="text-center">{{site.title}}</h1>
+          {% endif %}
+
+          {% if site.description != '' or site.enable_contact == true %}
+          <p class="text-center">
+            {% if site.description != '' %}
+            {{site.description}}
+            {% endif %}
+
+            {% if site.enable_contact == true %}
+            {% include contact.html %}
+            {% include contact-modal.html %}
+            {% endif %}
+          </p>
+          {% endif %}
+
+          <div class="hero-buttons">
+
+            {% if site.twitter_username != '' %}
+              <a href="mailto:tyheng97@gmail.com"><button class="btn btn-default btn-lg"><i class="fas fa-fw fa-envelope-square"></i>Email</button></a>
+            {% endif %}
+            {% if site.github_username != '' %}
+              <a href="https://github.com/tyheng97"><button class="btn btn-default btn-lg"><i class="fab fa-fw fa-github"></i>Github</button></a>
+            {% endif %}
+            {% if site.medium_username != '' %}
+              <a href="https://www.linkedin.com/in/yi-heng-tan-6a45a1155/"><button class="btn btn-default btn-lg"><i class="fab fa-fw fa-linkedin"></i>LinkedIn</button></a>
+            {% endif %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <a class="section-jump text-center" href="#portfolio">
+        <i class="fa fa-angle-down fa-3x"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
