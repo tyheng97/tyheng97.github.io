@@ -32,6 +32,8 @@ $secondary: #FF7B7B;
   }
 }
 
+
+
 body {
   // background-color: #e9edf0;
   @extend %opensans;
@@ -44,11 +46,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 article {
-  margin: 5em 0;
+  margin: 3em 0;
 }
 
 p {
-  line-height: 1.8;
+  line-height: 1.4;
   font-size: 1.3em;
 }
 
@@ -147,6 +149,19 @@ button.btn, input.btn {
       padding-right: 0.5em;
     }
   }
+  .home_avatar {
+  img {
+    max-width: 200px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid mix(#fff, #7a8288, 90%);
+
+    // @include breakpoint($large) {
+    //   padding: 5px;
+    //   border: 1px solid $border-color;
+    // }
+  }
+}
 }
 
 // /*--------------------------------------------------------------
