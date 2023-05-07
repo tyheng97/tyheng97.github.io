@@ -30,6 +30,11 @@ $secondary: #FF7B7B;
   .container {
     width: 100%
   }
+  img.experiencesmall{
+    max-width: 50px;
+    width:50px;
+    border-radius: 50%;  
+  }
 }
 
 
@@ -270,15 +275,42 @@ button.btn, input.btn {
 }
 .left{
 margin-right:2em;
+@include bp-xsmall {
+  margin-right: 0em;
+}
+@include bp-small {
+  margin-left: 0em;
+}
 
 }
 .right{
   margin-left:2em;
+  @include bp-xsmall {
+    margin-left: 0em;
+  }
+  @include bp-small {
+    margin-left: 0em;
+  }
 }
 .flex-container {
   display: flex;
-}
+  @include bp-xsmall {
+    flex-direction: column;
+ }
+  @include bp-small {
+        flex-direction: column;
 
+}
+}
+.mobileimage{
+
+  @include bp-xsmall {
+    display: flex;
+    justify-content: center;  }
+  @include bp-small {
+    display: flex;
+    justify-content: center;  }
+}
 .content-wrap {
   margin-bottom: 4em;
   @include bp-xsmall {
@@ -297,6 +329,10 @@ margin-right:2em;
       display: none;
     }
   }
+  img.experience-small{  
+    display:none;
+  
+  }
   img.experience-responsive {
     max-width: 200px;
     margin-top: 5em;
@@ -304,10 +340,18 @@ margin-right:2em;
     border-radius: 50%;
 
     @include bp-xsmall {
-      display: none;
+      margin-top: 1em;
+      max-width: 100px;
+      width:100px;
+      border-radius: 50%;  
+      border: 1px solid mix(#fff, #7a8288, 90%);
     }
     @include bp-small {
-      display: none;
+      margin-top: 1em;
+      max-width: 100px;
+      width:100px;
+      border-radius: 50%;    
+      border: 1px solid mix(#fff, #7a8288, 90%);
     }
   }
   .content {
