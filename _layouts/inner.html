@@ -1,0 +1,19 @@
+{% include header.html %}
+<head>
+
+  <link rel="stylesheet" href="{{ "/css/animate.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
+</head>
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+          {{ content }}
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+{% include footer.html %}

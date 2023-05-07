@@ -28,7 +28,7 @@ $secondary: #FF7B7B;
 
 @media (min-width: 1200px) {
   .container {
-    width: 1200px;
+    width: 100%
   }
 }
 
@@ -99,6 +99,8 @@ button.btn, input.btn {
 }
 
 .section-jump {
+  display:flex;
+  justify-content: center;
   position: relative;
   top: 0;
   color: #C8D7E1;
@@ -140,7 +142,7 @@ button.btn, input.btn {
     font-size: 48px;
   }
   p {
-    margin: 2em 0 2em 0;
+    margin: 1em 0 1em 0;
   }
   .hero-buttons {
     margin: 0 auto;
@@ -148,6 +150,9 @@ button.btn, input.btn {
     i {
       padding-right: 0.5em;
     }
+  }
+  .button-size{
+    width:180px;
   }
   .home_avatar {
   img {
@@ -221,6 +226,8 @@ button.btn, input.btn {
 // 	3.0 Posts
 // --------------------------------------------------------------*/
 #portfolio .container {
+  display: flex;
+  justify-content: center;
   margin-top: 10em;
   @include bp-xsmall {
     margin-top: 2em;
@@ -261,9 +268,19 @@ button.btn, input.btn {
     width: 60%;;
   }
 }
+.left{
+margin-right:2em;
+
+}
+.right{
+  margin-left:2em;
+}
+.flex-container {
+  display: flex;
+}
 
 .content-wrap {
-  margin-bottom: 8em;
+  margin-bottom: 4em;
   @include bp-xsmall {
     margin-bottom: 2em;
   }
@@ -271,6 +288,21 @@ button.btn, input.btn {
     margin-bottom: 2em;
   }
   img.img-responsive {
+    width:100%;
+    margin-top: 2em;
+    @include bp-xsmall {
+      display: none;
+    }
+    @include bp-small {
+      display: none;
+    }
+  }
+  img.experience-responsive {
+    max-width: 200px;
+    margin-top: 5em;
+    width:200px;
+    border-radius: 50%;
+
     @include bp-xsmall {
       display: none;
     }
@@ -279,14 +311,16 @@ button.btn, input.btn {
     }
   }
   .content {
-    margin-top: 5em;
-    margin-left: 5em;
+    margin-top: 2em;
     @include bp-xsmall {
       margin-left: 0;
     }
+    h1.title{
+      margin: 0;
+    }
     h3.title {
+      margin: 1em 0;
       position: relative;
-      margin-bottom: 1.5em;
       &:after {
         content: '';
         position: absolute;
@@ -297,8 +331,9 @@ button.btn, input.btn {
         background-color: #ECEFF1;
       }
     }
+
     .excerpt {
-      width: 80%;
+      width: 100%;
       @include bp-xsmall {
         width: 100%;
       }
