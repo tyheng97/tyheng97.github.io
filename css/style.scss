@@ -313,12 +313,12 @@ margin-right:2em;
     justify-content: center;  }
 }
 .content-wrap {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
   @include bp-xsmall {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
   @include bp-small {
-    margin-bottom: 2em;
+    margin-bottom:1em;
   }
   img.img-responsive {
     width:100%;
@@ -356,7 +356,7 @@ margin-right:2em;
     }
   }
   .content {
-    margin-top: 2em;
+    margin-top: 1em;
     @include bp-xsmall {
       margin-left: 0;
     }
